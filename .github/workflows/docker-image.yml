@@ -1,4 +1,4 @@
-  name: CI Build and Push Docker Images
+name: CI Build and Push Docker Images
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
           context: ./springbootexamproject
           file: ./springbootexamproject/backend.Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/ansible-labexam-backend:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/ansibleprep-labexam-backend:latest
 
       # Step 5 — Build & Push Frontend Image
       - name: Build and Push Frontend Image
@@ -41,4 +41,4 @@ jobs:
           context: ./reactexamapp
           file: ./reactexamapp/frontend.Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/ansible-labexam-frontend:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/ansibleprep-labexam-frontend:latest
